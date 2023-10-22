@@ -31,3 +31,21 @@ class Book {
 }
 
 // Write your code here
+class TechnicalBook extends Book {
+  constructor(title, author, ISBN, numCopies, edition) {
+    super(title, author, ISBN, numCopies);
+    this.edition = edition;
+  }
+
+  getEdition() {
+    return `The current version of this book is ${this.edition}`;
+  }
+}
+
+const quantumPhysicsForBabies = new TechnicalBook("Quantum Physics for Babies", "Chris Ferrie", 1264, 11, 3);
+const theArtOfWritingTechnicalBooks = new TechnicalBook("The Art of Writing Technical Books", "Peter H. Gregory", 168574, 2, 5);
+console.log(quantumPhysicsForBabies.availability);
+console.log(quantumPhysicsForBabies.getEdition());
+theArtOfWritingTechnicalBooks.sell(2);
+console.log(theArtOfWritingTechnicalBooks.availability);
+console.log(theArtOfWritingTechnicalBooks.getEdition());
